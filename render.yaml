@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: product-list-react
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: /apiProxy.js
